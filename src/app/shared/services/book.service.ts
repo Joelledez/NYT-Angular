@@ -15,10 +15,5 @@ export class BookService {
       `${environment.baseUrlAPI}`
       );
   }
-  getDetails(id:number){
-    return this.http.get<Book[]>(
-      `${environment.baseUrlAPI}/${id}`
-      );
-  }
 
 }

@@ -1,8 +1,8 @@
 export interface Book{
-    id:number;
+    primary_isbn10:number;
     rank:number;
     title:string;
-    image:string;
+    book_image:string;
     author:string;
     descripcion:string;
 }

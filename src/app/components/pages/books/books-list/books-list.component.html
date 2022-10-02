@@ -1,0 +1,47 @@
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+  <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="book"> 
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+          <div class="image">
+            <a [routerLink]="['/books-details,books[0].primary_isbn10']">
+                <img
+                [src]="books[0].book_image"
+                [alt]="books[0].title"
+                class="card-img-top"
+                />
+            </a>
+        </div>
+          <h5>{{books[0].title}}</h5>
+          <p>Rank: {{books[0].rank}}</p>
+        </div>
+      </div>
+    <div class="carousel-item" *ngFor="let book of books.slice(1)">
+      <div class="book"> 
+        </div>
+        <div class="carousel-caption d-none d-md-block">
+          <div class="image">
+            <a [routerLink]="['/books-details,book.primary_isbn10']">
+                <img
+                [src]="book.book_image"
+                [alt]="book.title"
+                class="card-img-top"
+                />
+            </a>
+        </div>
+          <h5>{{book.title}}</h5>
+          <p>Rank: {{book.rank}}</p>
+        </div>
+      </div>
+      
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
