@@ -6,5 +6,7 @@ import { Injectable } from '@angular/core';
 export class BookService {
 
   constructor() { }
-  getDetails(){}
+  searchBooks(query='', page=1){}
+  getDetails(id:number){}
+
 }
