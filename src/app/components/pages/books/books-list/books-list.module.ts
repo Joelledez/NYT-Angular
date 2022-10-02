@@ -7,7 +7,6 @@ import { BooksListComponent } from './books-list.component';
 
 @NgModule({
   declarations: [
-    BooksListComponent
   ],
   imports: [
     CommonModule,

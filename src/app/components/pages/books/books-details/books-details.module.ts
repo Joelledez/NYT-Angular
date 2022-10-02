@@ -7,7 +7,6 @@ import { BooksDetailsComponent } from './books-details.component';
 
 @NgModule({
   declarations: [
-    BooksDetailsComponent
   ],
   imports: [
     CommonModule,
