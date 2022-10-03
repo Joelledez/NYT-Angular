@@ -15,5 +15,10 @@ export class BookService {
       `${environment.baseUrlAPI}`
       );
   }
+  getDetails(primary_isbn10:string){
+    return this.http.get<Book>(
+      `${environment.baseUrlAPI}/${primary_isbn10}`
+      );
+  }
 
 }

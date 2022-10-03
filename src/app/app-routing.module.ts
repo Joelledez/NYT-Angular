@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./components/pages/books/books-list/books-list.module').then((m) => m.BooksListModule) 
   },
   { path: 'books-details/:primary_isbn10',
-    loadChildren: () => import('./components/pages/books/books-details/books-details.module').then((m) => m.BooksDetailsModule) 
+    loadChildren: () => import('./components/pages/books/books-details/books-details.module').then((m) => m.BooksDetailsModule),
   },
   
 ];

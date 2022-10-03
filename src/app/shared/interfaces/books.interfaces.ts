@@ -1,5 +1,5 @@
 export interface Book{
-    primary_isbn10:number;
+    primary_isbn10:string;
     rank:number;
     title:string;
     book_image:string;

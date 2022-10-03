@@ -5,11 +5,10 @@
         </div>
         <div class="carousel-caption d-none d-md-block">
           <div class="image">
-            <a [routerLink]="['/books-details,books[0].primary_isbn10']">
+            <a [routerLink]="['/books-details',books[0].primary_isbn10]">
                 <img
                 [src]="books[0].book_image"
                 [alt]="books[0].title"
-                class="card-img-top"
                 />
             </a>
         </div>
@@ -22,11 +21,11 @@
         </div>
         <div class="carousel-caption d-none d-md-block">
           <div class="image">
-            <a [routerLink]="['/books-details,book.primary_isbn10']">
+            <a [routerLink]="['/books-details',book.primary_isbn10]">
                 <img
                 [src]="book.book_image"
                 [alt]="book.title"
-                class="card-img-top"
+
                 />
             </a>
         </div>
