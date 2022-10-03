@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'books-list',
     loadChildren: () => import('./components/pages/books/books-list/books-list.module').then((m) => m.BooksListModule) 
   },
-  { path: 'books-details/:primary_isbn10',
+  { path: 'books-details/:book.primary_isbn10',
     loadChildren: () => import('./components/pages/books/books-details/books-details.module').then((m) => m.BooksDetailsModule),
   },
   

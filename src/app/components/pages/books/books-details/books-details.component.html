@@ -1,1 +1,22 @@
-<p>books-details works!</p>
+<p>hOLI</p>
+<div class="row" *ngIf="book$">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card">
+            <div class="image">
+                <img
+                  [src]="book$.book_image"
+                  [alt]="book$.title"
+                  class="card-img-top"
+                />
+            </div>
+            <div class="card-inner">
+                <div class="header">
+                    <h2>{{book$.title}}</h2>
+                    <h4 class="text-muted">Rank: {{book$.rank}}</h4>
+                    <h4 class="text-muted">Auhthor: {{book$.author}}</h4>
+                    <h4 class="text-muted">Description: {{book$.description}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

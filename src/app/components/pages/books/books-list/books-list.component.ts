@@ -29,7 +29,6 @@ export class BooksListComponent implements OnInit {
       take(1)
     ).subscribe((res:any)=>{
       const {results}=res;
-      console.log(results.books.title);
       this.books = [... this.books,... results.books,]
     })
 

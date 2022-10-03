@@ -4,5 +4,5 @@ export interface Book{
     title:string;
     book_image:string;
     author:string;
-    descripcion:string;
+    description:string;
 }

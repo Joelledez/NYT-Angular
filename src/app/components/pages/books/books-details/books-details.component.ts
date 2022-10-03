@@ -11,17 +11,28 @@ import { Location } from '@angular/common';
   styleUrls: ['./books-details.component.scss']
 })
 export class BooksDetailsComponent implements OnInit {
-  book$!: Observable<Book>;
-
-  constructor(private route:ActivatedRoute,private bookSvr:BookService,private location:Location) { }
+  books: Book[]=[];
+  book$!: Book;
+  constructor(private route:ActivatedRoute,private bookSvc:BookService,private location:Location) { }
 
   ngOnInit(): void {
-    this.route.params.pipe(take(1)).subscribe((params)=>{
-      const primary_isbn10 = params['primary_isbn10'];
-      this.book$ = this.bookSvr.getDetails(primary_isbn10);
-    }); 
+    this.bookSvc.searchBooks()
+    .pipe(
+      take(1)
+    ).subscribe((res:any)=>{
+      const {results}=res;
+      this.books = [... this.books,... results.books,]
+      this.route.params.pipe(take(1)).subscribe((params)=>{
+        const primary_isbn10 = params['book.primary_isbn10'];
+        this.books.forEach(book => {
+          if(book.primary_isbn10==primary_isbn10){
+            this.book$=book
+            console.log(book.primary_isbn10)
+          }
+        });
+      });
+    })    
   }
-  
   onGoBack():void{
     this.location.back();
   }
